@@ -1,0 +1,23 @@
+{
+"name": "Go-ebpf-env",
+	"build": {"dockerfile": "Dockerfile"},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"golang.Go",
+				"GitHub.copilot",
+                "dsznajder.es7-react-js-snippets"
+			]
+		}
+	},
+
+	"runArgs": ["--userns=keep-id","--network=host"],
+	"containerUser": "vscode",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
+	"workspaceFolder": "/workspace"
+}
